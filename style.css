@@ -16,7 +16,10 @@ header {
     justify-content: space-between;
 }
 .logo {
-    height: 60px;
+      display: block;
+  margin: 40px auto;
+  width: 220px;
+  max-width: 80%;
 }
 nav a {
     color: white;
