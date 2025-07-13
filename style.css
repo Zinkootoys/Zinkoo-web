@@ -45,8 +45,14 @@ main {
     height: 120px;
 }
 footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
+  background-color: #f7f7f7;
+  padding: 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.seller-logos img {
+  height: 100px;
+  margin: 0 20px;
+  vertical-align: middle;
 }
