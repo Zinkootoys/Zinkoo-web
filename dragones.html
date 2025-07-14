@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ZINKOO DRAGONS</title>
+    <style>
+        body {
+            background-color: #fefefe;
+            font-family: Arial, sans-serif;
+            background-image: url('fondo_dragones.png');
+            background-size: cover;
+            background-repeat: repeat;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #222;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .item {
+            text-align: center;
+            cursor: pointer;
+        }
+        .item img {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: contain;
+            border: 2px solid #444;
+            border-radius: 8px;
+            background-color: white;
+        }
+        .caption {
+            margin-top: 8px;
+            font-weight: bold;
+            color: #222;
+            font-size: 1.1em;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        .modal-content img {
+            max-width: 90%;
+            max-height: 90%;
+            display: none;
+        }
+        .modal-content img.active {
+            display: block;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            user-select: none;
+            transform: translateY(-50%);
+        }
+        .prev { left: 0; }
+        .next { right: 0; }
+        
+    .modal[data-dragon="skeleton"] {
+        background-image: url('skeleton_fondo.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
+    .modal[data-dragon="ice"] {
+        background-image: url('ice_fondo.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
+    .modal[data-dragon="crystal"] {
+        background-image: url('crystal_fondo.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
+    .modal[data-dragon="autumn"] {
+        background-image: url('autumn_fondo.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
+    .modal[data-dragon="cursed"] {
+        background-image: url('cursed_fondo.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-button">← Volver a inicio</a>
+    <h1>ZINKOO DRAGONS</h1>
+    <div class="gallery">
+        
+        <div class="item" onclick="openModal('skeleton')">
+            <img src="skeleton_main.jpg" alt="Skeleton Dragon">
+            <div class="caption">Skeleton Dragon</div>
+        </div>
+    
+        <div class="item" onclick="openModal('ice')">
+            <img src="ice_main.jpg" alt="Ice Dragon">
+            <div class="caption">Ice Dragon</div>
+        </div>
+    
+        <div class="item" onclick="openModal('crystal')">
+            <img src="crystal_main.jpg" alt="Crystal Dragon">
+            <div class="caption">Crystal Dragon</div>
+        </div>
+    
+        <div class="item" onclick="openModal('autumn')">
+            <img src="autumn_main.jpg" alt="Autumn Dragon">
+            <div class="caption">Autumn Dragon</div>
+        </div>
+    
+        <div class="item" onclick="openModal('cursed')">
+            <img src="cursed_main.jpg" alt="Cursed Dragon">
+            <div class="caption">Cursed Dragon</div>
+        </div>
+    
+    </div>
+    
+    <div id="modal-skeleton" class="modal" data-dragon="skeleton">
+        <span class="close" onclick="closeModal('skeleton')">&times;</span>
+        <div class="modal-content" id="modal-content-skeleton">
+            <img src="skeleton_1.jpg" alt="Skeleton 1"><img src="skeleton_2.jpg" alt="Skeleton 2"><img src="skeleton_3.jpg" alt="Skeleton 3"><img src="skeleton_4.jpg" alt="Skeleton 4"><img src="skeleton_5.jpg" alt="Skeleton 5"><img src="skeleton_6.jpg" alt="Skeleton 6"><img src="skeleton_7.jpg" alt="Skeleton 7"><img src="skeleton_8.jpg" alt="Skeleton 8"><img src="skeleton_9.jpg" alt="Skeleton 9"><img src="skeleton_10.jpg" alt="Skeleton 10">
+        </div>
+        <a class="prev" onclick="changeSlide(-1, 'skeleton')">&#10094;</a>
+        <a class="next" onclick="changeSlide(1, 'skeleton')">&#10095;</a>
+    </div>
+    
+    <div id="modal-ice" class="modal" data-dragon="ice">
+        <span class="close" onclick="closeModal('ice')">&times;</span>
+        <div class="modal-content" id="modal-content-ice">
+            <img src="ice_1.jpg" alt="Ice 1"><img src="ice_2.jpg" alt="Ice 2"><img src="ice_3.jpg" alt="Ice 3"><img src="ice_4.jpg" alt="Ice 4"><img src="ice_5.jpg" alt="Ice 5"><img src="ice_6.jpg" alt="Ice 6"><img src="ice_7.jpg" alt="Ice 7"><img src="ice_8.jpg" alt="Ice 8"><img src="ice_9.jpg" alt="Ice 9"><img src="ice_10.jpg" alt="Ice 10">
+        </div>
+        <a class="prev" onclick="changeSlide(-1, 'ice')">&#10094;</a>
+        <a class="next" onclick="changeSlide(1, 'ice')">&#10095;</a>
+    </div>
+    
+    <div id="modal-crystal" class="modal" data-dragon="crystal">
+        <span class="close" onclick="closeModal('crystal')">&times;</span>
+        <div class="modal-content" id="modal-content-crystal">
+            <img src="crystal_1.jpg" alt="Crystal 1"><img src="crystal_2.jpg" alt="Crystal 2"><img src="crystal_3.jpg" alt="Crystal 3"><img src="crystal_4.jpg" alt="Crystal 4"><img src="crystal_5.jpg" alt="Crystal 5"><img src="crystal_6.jpg" alt="Crystal 6"><img src="crystal_7.jpg" alt="Crystal 7"><img src="crystal_8.jpg" alt="Crystal 8"><img src="crystal_9.jpg" alt="Crystal 9"><img src="crystal_10.jpg" alt="Crystal 10">
+        </div>
+        <a class="prev" onclick="changeSlide(-1, 'crystal')">&#10094;</a>
+        <a class="next" onclick="changeSlide(1, 'crystal')">&#10095;</a>
+    </div>
+    
+    <div id="modal-autumn" class="modal" data-dragon="autumn">
+        <span class="close" onclick="closeModal('autumn')">&times;</span>
+        <div class="modal-content" id="modal-content-autumn">
+            <img src="autumn_1.jpg" alt="Autumn 1"><img src="autumn_2.jpg" alt="Autumn 2"><img src="autumn_3.jpg" alt="Autumn 3"><img src="autumn_4.jpg" alt="Autumn 4"><img src="autumn_5.jpg" alt="Autumn 5"><img src="autumn_6.jpg" alt="Autumn 6"><img src="autumn_7.jpg" alt="Autumn 7"><img src="autumn_8.jpg" alt="Autumn 8"><img src="autumn_9.jpg" alt="Autumn 9"><img src="autumn_10.jpg" alt="Autumn 10">
+        </div>
+        <a class="prev" onclick="changeSlide(-1, 'autumn')">&#10094;</a>
+        <a class="next" onclick="changeSlide(1, 'autumn')">&#10095;</a>
+    </div>
+    
+    <div id="modal-cursed" class="modal" data-dragon="cursed">
+        <span class="close" onclick="closeModal('cursed')">&times;</span>
+        <div class="modal-content" id="modal-content-cursed">
+            <img src="cursed_1.jpg" alt="Cursed 1"><img src="cursed_2.jpg" alt="Cursed 2"><img src="cursed_3.jpg" alt="Cursed 3"><img src="cursed_4.jpg" alt="Cursed 4"><img src="cursed_5.jpg" alt="Cursed 5"><img src="cursed_6.jpg" alt="Cursed 6"><img src="cursed_7.jpg" alt="Cursed 7"><img src="cursed_8.jpg" alt="Cursed 8"><img src="cursed_9.jpg" alt="Cursed 9"><img src="cursed_10.jpg" alt="Cursed 10">
+        </div>
+        <a class="prev" onclick="changeSlide(-1, 'cursed')">&#10094;</a>
+        <a class="next" onclick="changeSlide(1, 'cursed')">&#10095;</a>
+    </div>
+    
+    <script>
+        function openModal(id) {
+            const modal = document.getElementById("modal-" + id);
+            modal.style.display = "block";
+            const images = modal.querySelectorAll("img");
+            if (images.length > 0) {
+                images[0].classList.add("active");
+            }
+        }
+        function closeModal(id) {
+            const modal = document.getElementById("modal-" + id);
+            modal.style.display = "none";
+            modal.querySelectorAll("img").forEach(img => img.classList.remove("active"));
+        }
+        function changeSlide(n, id) {
+            const modal = document.getElementById("modal-" + id);
+            const images = Array.from(modal.querySelectorAll("img"));
+            const current = images.findIndex(img => img.classList.contains("active"));
+            if (current !== -1) {
+                images[current].classList.remove("active");
+                let next = (current + n + images.length) % images.length;
+                images[next].classList.add("active");
+            }
+        }
+    </script>
+</body>
+</html>
