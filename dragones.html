@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ZINKOO DRAGONS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('bg_dragons_light.png');
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: #222;
+        }
+        header {
+            background-color: #ff7900;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 2em;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .gallery-item {
+            margin: 15px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: transform 0.3s, border 0.3s;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+            border: 2px solid #ff7900;
+        }
+        .gallery-item img {
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .sub-gallery {
+            display: none;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .sub-gallery img {
+            width: 200px;
+            margin: 10px;
+            border-radius: 8px;
+        }
+        .active {
+            display: flex;
+        }
+    </style>
+    <script>
+        function showSubGallery(id) {
+            const galleries = document.querySelectorAll('.sub-gallery');
+            galleries.forEach(g => g.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            window.scrollTo(0, document.getElementById(id).offsetTop);
+        }
+    </script>
+</head>
+<body>
+    <header>ZINKOO DRAGONS</header>
+
+    <div class="gallery">
+        <div class="gallery-item" onclick="showSubGallery('skeleton')">
+            <img src="skeleton_main.jpg" alt="Skeleton Dragon">
+        </div>
+        <div class="gallery-item" onclick="showSubGallery('ice')">
+            <img src="ice_main.jpg" alt="Ice Dragon">
+        </div>
+        <div class="gallery-item" onclick="showSubGallery('crystal')">
+            <img src="crystal_main.jpg" alt="Crystal Dragon">
+        </div>
+        <div class="gallery-item" onclick="showSubGallery('autumn')">
+            <img src="autum_main.jpg" alt="Autumn Dragon">
+        </div>
+        <div class="gallery-item" onclick="showSubGallery('cursed')">
+            <img src="cursed_main.jpg" alt="Cursed Dragon">
+        </div>
+    </div>
+
+    <div id="skeleton" class="sub-gallery active">
+        <img src="skeleton_main.jpg" alt="Skeleton 1">
+        <img src="skeleton_main.jpg" alt="Skeleton 2">
+        <img src="skeleton_main.jpg" alt="Skeleton 3">
+    </div>
+
+    <div id="ice" class="sub-gallery">
+        <img src="ice_main.jpg" alt="Ice 1">
+        <img src="ice_main.jpg" alt="Ice 2">
+    </div>
+
+    <div id="crystal" class="sub-gallery">
+        <img src="crystal_main.jpg" alt="Crystal 1">
+        <img src="crystal_main.jpg" alt="Crystal 2">
+    </div>
+
+    <div id="autumn" class="sub-gallery">
+        <img src="autum_main.jpg" alt="Autumn 1">
+        <img src="autum_main.jpg" alt="Autumn 2">
+    </div>
+
+    <div id="cursed" class="sub-gallery">
+        <img src="cursed_main.jpg" alt="Cursed 1">
+        <img src="cursed_main.jpg" alt="Cursed 2">
+    </div>
+</body>
+</html>
