@@ -1,163 +1,102 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>ZINKOO Dragons</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('fondo.png');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: repeat;
-            color: #333;
-        }
-
-        header {
-            text-align: center;
-            padding: 30px 20px 10px;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 2em;
-        }
-
-        .dragons {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .dragons a {
-            display: block;
-            text-align: center;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .dragons img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-
-        .dragons img:hover {
-            transform: scale(1.05);
-        }
-
-        .back-button {
-            text-align: center;
-            margin: 30px 0;
-        }
-
-        .back-button a {
-            background-color: #ff7900;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px 10px 40px;
-            background: transparent;
-        }
-
-        footer img {
-            height: 50px;
-            margin: 0 10px;
-        }
-
-        .footer-text {
-            margin-top: 10px;
-            font-size: 0.9em;
-            color: #444;
-        }
-
-        /* Galería Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 100;
-            left: 0; top: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.8);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 10px;
-        }
-
-        .modal:target {
-            display: flex;
-        }
-
-        .close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 2em;
-            color: white;
-            text-decoration: none;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ZINKOO Dragons</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body {
+      background-image: url('fondo.png');
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      margin-bottom: 40px;
+    }
+    .dragon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .dragon-card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .dragon-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .dragon-card p {
+      margin-top: 8px;
+      font-weight: bold;
+      color: #fff;
+    }
+    .back-button {
+      display: inline-block;
+      margin: 40px auto 20px;
+      padding: 10px 20px;
+      background-color: orange;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    footer {
+      background: transparent;
+      color: #fff;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+    footer img {
+      height: 40px;
+      margin: 0 10px;
+      vertical-align: middle;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="ZINKOO Dragons" style="height: 60px;">
-        <h1>ZINKOO Dragons</h1>
-    </header>
+  <h1><img src="logo.png" alt="ZINKOO Dragons" style="height: 50px; vertical-align: middle;"/> ZINKOO Dragons</h1>
 
-    <section class="dragons">
-        <a href="#modal-skeleton">
-            <img src="skeleton_main.jpg" alt="Skeleton Dragon">
-        </a>
-        <a href="#modal-ice">
-            <img src="ice_main.jpg" alt="Ice Dragon">
-        </a>
-        <a href="#modal-crystal">
-            <img src="crystal_main.jpg" alt="Crystal Dragon">
-        </a>
-        <a href="#modal-autumn">
-            <img src="autum_main.jpg" alt="Autumn Dragon">
-        </a>
-        <a href="#modal-cursed">
-            <img src="cursed_main.jpg" alt="Cursed Dragon">
-        </a>
-    </section>
-
-    <div class="back-button">
-        <a href="index.html">← Tornar a l’inici</a>
+  <div class="dragon-grid">
+    <div class="dragon-card">
+      <a href="skeleton.html"><img src="skeleton_main.jpg" alt="Skeleton Dragon"/></a>
+      <p>Skeleton Dragon</p>
     </div>
-
-    <!-- Galería de Skeleton -->
-    <div id="modal-skeleton" class="modal">
-        <a href="#" class="close">&times;</a>
-        <img src="skeleton_main.jpg" alt="Skeleton Dragon Gallery">
+    <div class="dragon-card">
+      <a href="ice.html"><img src="ice_main.jpg" alt="Ice Dragon"/></a>
+      <p>Ice Dragon</p>
     </div>
+    <div class="dragon-card">
+      <a href="crystal.html"><img src="crystal_main.jpg" alt="Crystal Dragon"/></a>
+      <p>Crystal Dragon</p>
+    </div>
+    <div class="dragon-card">
+      <a href="autum.html"><img src="autum_main.jpg" alt="Autumn Dragon"/></a>
+      <p>Autumn Dragon</p>
+    </div>
+    <div class="dragon-card">
+      <a href="cursed.html"><img src="cursed_main.jpg" alt="Cursed Dragon"/></a>
+      <p>Cursed Dragon</p>
+    </div>
+  </div>
 
-    <!-- Repetir modales para cada dragón según se desee -->
+  <a href="index.html" class="back-button">← Tornar a l'inici</a>
 
-    <footer>
-        <img src="Zou3DAuthorized_Seller_Badge.png" alt="Zou3D License">
-        <img src="Authorized_Seller_Badge.png" alt="Snap Print License">
-        <div class="footer-text">Fet a Sant Pol de Mar, Catalunya</div>
-    </footer>
+  <footer>
+    <img src="Zou3DAuthorized_Seller_Badge.png" alt="Zou3D License"/>
+    <img src="Authorized_Seller_Badge.png" alt="Snap Print License"/>
+    <div>Fet a Sant Pol de Mar, Catalunya</div>
+  </footer>
 </body>
 </html>
