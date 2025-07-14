@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,10 +12,21 @@
             background-repeat: repeat;
             padding: 20px;
         }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #222;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
         h1 {
             text-align: center;
             color: #222;
         }
+
         .gallery {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -24,9 +34,11 @@
             max-width: 1000px;
             margin: 0 auto;
         }
+
         .item {
             text-align: center;
         }
+
         .item img {
             width: 100%;
             height: auto;
@@ -36,17 +48,21 @@
             border-radius: 8px;
             background-color: white;
         }
+
         .caption {
             margin-top: 8px;
             font-weight: bold;
-            color: #222; /* Color más oscuro para mejor visibilidad */
+            color: #222;
             font-size: 1.1em;
         }
     </style>
 </head>
-  <a href="index.html" class="back-button">← Volver a inicio</a>
 <body>
+
+    <a href="index.html" class="back-button">← Volver a inicio</a>
+
     <h1>ZINKOO DRAGONS</h1>
+
     <div class="gallery">
         <div class="item">
             <a href="skeleton.html">
@@ -79,5 +95,6 @@
             <div class="caption">Cursed Dragon</div>
         </div>
     </div>
+
 </body>
 </html>
