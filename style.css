@@ -54,3 +54,34 @@ footer {
   margin: 0 20px;
   vertical-align: middle;
 }
+.dragones-link {
+  position: relative;
+  margin: 40px auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+.dragones-link img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.dragones-link:hover img {
+  transform: scale(1.02);
+}
+
+.dragones-link .overlay-text {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+}
