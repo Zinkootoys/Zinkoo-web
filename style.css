@@ -85,3 +85,9 @@ footer {
   border-radius: 8px;
   font-weight: bold;
 }
+.dragones-link img {
+  transition: transform 0.3s ease;
+}
+.dragones-link img:hover {
+  transform: scale(1.05);
+}
