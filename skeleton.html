@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Skeleton Dragon - ZINKOO</title>
+    <style>
+        body {
+            background-color: #fdfdfb;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #ffcc00;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            background-color: #ffdb4d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Skeleton Dragon</h1>
+        <div class="gallery">
+            <img src="skeleton_1.jpg" alt="Skeleton Dragon 1">
+            <img src="skeleton_2.jpg" alt="Skeleton Dragon 2">
+            <img src="skeleton_3.jpg" alt="Skeleton Dragon 3">
+        </div>
+        <a class="back-link" href="dragones.html">← Volver a la galería</a>
+    </div>
+</body>
+</html>
