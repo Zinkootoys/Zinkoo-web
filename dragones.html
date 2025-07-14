@@ -1,115 +1,108 @@
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 <head>
-    <meta charset="UTF-8">
-    <title>ZINKOO DRAGONS</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-image: url('bg_dragons_light.png');
-            background-size: cover;
-            margin: 0;
-            padding: 0;
-            color: #222;
-        }
-        header {
-            background-color: #ff7900;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 2em;
-        }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 20px;
-        }
-        .gallery-item {
-            margin: 15px;
-            cursor: pointer;
-            border: 2px solid transparent;
-            transition: transform 0.3s, border 0.3s;
-        }
-        .gallery-item:hover {
-            transform: scale(1.05);
-            border: 2px solid #ff7900;
-        }
-        .gallery-item img {
-            width: 250px;
-            height: auto;
-            border-radius: 10px;
-        }
-        .sub-gallery {
-            display: none;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 20px;
-        }
-        .sub-gallery img {
-            width: 200px;
-            margin: 10px;
-            border-radius: 8px;
-        }
-        .active {
-            display: flex;
-        }
-    </style>
-    <script>
-        function showSubGallery(id) {
-            const galleries = document.querySelectorAll('.sub-gallery');
-            galleries.forEach(g => g.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-            window.scrollTo(0, document.getElementById(id).offsetTop);
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ZINKOO Dragons</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('images/fondo_zinkoo.png') repeat;
+      background-size: contain;
+      color: #222;
+    }
+    header {
+      text-align: center;
+      padding: 30px 20px 10px;
+    }
+    header img {
+      height: 80px;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 0;
+      color: #444;
+    }
+    .dragon-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .dragon-gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .dragon-gallery img:hover {
+      transform: scale(1.03);
+    }
+    .back-button {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .back-button a {
+      background: #ff6600;
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+    footer img {
+      height: 40px;
+      margin: 10px;
+    }
+    footer p {
+      margin-top: 15px;
+      font-size: 0.9em;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
-    <header>ZINKOO DRAGONS</header>
-
-    <div class="gallery">
-        <div class="gallery-item" onclick="showSubGallery('skeleton')">
-            <img src="skeleton_main.jpg" alt="Skeleton Dragon">
-        </div>
-        <div class="gallery-item" onclick="showSubGallery('ice')">
-            <img src="ice_main.jpg" alt="Ice Dragon">
-        </div>
-        <div class="gallery-item" onclick="showSubGallery('crystal')">
-            <img src="crystal_main.jpg" alt="Crystal Dragon">
-        </div>
-        <div class="gallery-item" onclick="showSubGallery('autumn')">
-            <img src="autum_main.jpg" alt="Autumn Dragon">
-        </div>
-        <div class="gallery-item" onclick="showSubGallery('cursed')">
-            <img src="cursed_main.jpg" alt="Cursed Dragon">
-        </div>
-    </div>
-
-    <div id="skeleton" class="sub-gallery active">
-        <img src="skeleton_main.jpg" alt="Skeleton 1">
-        <img src="skeleton_main.jpg" alt="Skeleton 2">
-        <img src="skeleton_main.jpg" alt="Skeleton 3">
-    </div>
-
-    <div id="ice" class="sub-gallery">
-        <img src="ice_main.jpg" alt="Ice 1">
-        <img src="ice_main.jpg" alt="Ice 2">
-    </div>
-
-    <div id="crystal" class="sub-gallery">
-        <img src="crystal_main.jpg" alt="Crystal 1">
-        <img src="crystal_main.jpg" alt="Crystal 2">
-    </div>
-
-    <div id="autumn" class="sub-gallery">
-        <img src="autum_main.jpg" alt="Autumn 1">
-        <img src="autum_main.jpg" alt="Autumn 2">
-    </div>
-
-    <div id="cursed" class="sub-gallery">
-        <img src="cursed_main.jpg" alt="Cursed 1">
-        <img src="cursed_main.jpg" alt="Cursed 2">
-    </div>
+  <header>
+    <img src="images/logo_dragons.png" alt="ZINKOO Dragons">
+    <h1>ZINKOO Dragons</h1>
+  </header>
+  <div class="dragon-gallery">
+    <a href="images/skeleton1.jpg" data-lightbox="skeleton" data-title="Skeleton Dragon">
+      <img src="images/skeleton_main.jpg" alt="Skeleton Dragon">
+    </a>
+    <a href="images/ice1.jpg" data-lightbox="ice" data-title="Ice Dragon">
+      <img src="images/ice_main.jpg" alt="Ice Dragon">
+    </a>
+    <a href="images/crystal1.jpg" data-lightbox="crystal" data-title="Crystal Dragon">
+      <img src="images/crystal_main.jpg" alt="Crystal Dragon">
+    </a>
+    <a href="images/autumn1.jpg" data-lightbox="autumn" data-title="Autumn Dragon">
+      <img src="images/autum_main.jpg" alt="Autumn Dragon">
+    </a>
+    <a href="images/cursed1.jpg" data-lightbox="cursed" data-title="Cursed Dragon">
+      <img src="images/cursed_main.jpg" alt="Cursed Dragon">
+    </a>
+  </div>
+  <div class="back-button">
+    <a href="index.html">← Tornar a l'inici</a>
+  </div>
+  <footer>
+    <img src="images/Zou3DAuthorized_Seller_Badge.png" alt="Zou3D License">
+    <img src="images/Authorized_Seller_Badge.png" alt="Snap Print License">
+    <p>Fet a Sant Pol de Mar, Catalunya</p>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 </body>
 </html>
