@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Skeleton Dragon – ZINKOO Dragons</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-image: url('fondo.png');
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      color: #333;
+    }
+
+    .main-image {
+      width: 80%;
+      max-width: 500px;
+      margin: 20px auto;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px;
+    }
+
+    .gallery img {
+      width: 200px;
+      border-radius: 8px;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .back-button {
+      margin-top: 30px;
+    }
+
+    .back-button a {
+      background-color: #f60;
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 10px;
+      background-color: transparent;
+    }
+
+    footer img {
+      height: 40px;
+      margin: 0 10px;
+      vertical-align: middle;
+    }
+
+    footer p {
+      color: #333;
+      font-size: 0.9em;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Skeleton Dragon</h1>
+
+  <img src="skeleton_main.jpg" alt="Skeleton Dragon" class="main-image">
+
+  <div class="gallery">
+    <img src="skeleton_1.jpg" alt="Skeleton Dragon">
+    <img src="skeleton_2.jpg" alt="Skeleton Dragon">
+    <img src="skeleton_3.jpg" alt="Skeleton Dragon">
+  </div>
+
+  <div class="back-button">
+    <a href="dragones.html">← Volver a Dragones</a>
+  </div>
+
+  <footer>
+    <img src="Zou3DAuthorized_Seller_Badge.png" alt="Zou3D License">
+    <img src="Authorized_Seller_Badge.png" alt="Snap Print License">
+    <p>Fet a Sant Pol de Mar, Catalunya</p>
+  </footer>
+
+</body>
+</html>
