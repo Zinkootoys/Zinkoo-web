@@ -114,12 +114,14 @@ footer {
 }
 .banner {
   width: 100%;
-  overflow: hidden;
+  height: 300px;       /* altura fija del contenedor */
+  overflow: hidden;    /* recorta lo que sobresalga */
 }
 .banner-img {
-  display: block;
   width: 100%;
-  height: auto;
+  height: 100%;        /* llena el contenedor en altura */
+  object-fit: cover;   /* recorta centrado, preserva proporción */
+  object-position: center top; /* opcional: ajusta el foco del recorte */
 }
 .main-nav {
   background-color: #FF7900; /* tu naranja */
