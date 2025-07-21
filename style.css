@@ -14,12 +14,6 @@ header {
   align-items: center;
   justify-content: center;
 }
-.logo {
-      display: block;
-  margin: 10px auto;
-  width: 180px;
-  max-width: 80%;
-}
 nav a {
     color: white;
     margin: 0 10px;
@@ -117,3 +111,24 @@ footer {
   text-decoration: underline;
 }
 </style>
+}
+.banner {
+  width: 100%;
+  overflow: hidden;
+}
+.banner-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.main-nav {
+  background-color: #FF7900; /* tu naranja */
+  text-align: center;
+  padding: 10px 0;
+}
+.main-nav a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
