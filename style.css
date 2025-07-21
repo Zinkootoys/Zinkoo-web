@@ -1,41 +1,128 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+/* Fondo de la página */
 body {
   background-image: url('fondo.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  font-family: sans-serif;
 }
+
+/* Header: solo contendrá banner y luego la nav */
 header {
-   background: #f77900;
-  color: white;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+/* Contenedor del banner a pantalla completa */
+.banner {
+  width: 100%;
+  height: 300px;       /* ajusta esta altura a tu gusto */
+  overflow: hidden;
+}
+
+.banner-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Navegación principal */
+.main-nav {
+  background-color: #FF7900;
+  text-align: center;
   padding: 10px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
-nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
+
+.main-nav a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
 }
+
 .langs {
-    display: inline-block;
+  display: inline-block;
+  margin-left: 10px;
+  font-weight: normal;
 }
+
+/* Main / Galería de productos */
 main {
-    padding: 20px;
-    text-align: center;
+  padding: 20px;
+  text-align: center;
 }
+
 .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
 }
+
 .gallery img {
-    height: 120px;
+  height: 120px;
+  width: auto;
+  border-radius: 8px;
 }
+
+/* Sección “No et perdis els dracs!” */
+.dragones-link {
+  position: relative;
+  margin: 40px auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+.dragones-link img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.dragones-link img:hover {
+  transform: scale(1.05);
+}
+
+.dragones-link .overlay-text {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* Botón “Volver” */
+.back-button {
+  display: inline-block;
+  margin: 20px;
+  font-weight: bold;
+  color: #222;
+  font-size: 1.1em;
+  text-decoration: none;
+}
+
+.back-button:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
 footer {
   background: transparent;
   padding: 20px 0;
@@ -53,84 +140,11 @@ footer {
 .auth-logo {
   height: 60px;
   margin: 5px;
-  
+  width: auto;
 }
 
 .seller-logos img {
   height: 100px;
   margin: 0 20px;
   vertical-align: middle;
-}
-.dragones-link {
-  position: relative;
-  margin: 40px auto;
-  max-width: 800px;
-  text-align: center;
-}
-
-.dragones-link img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
-}
-
-.dragones-link:hover img {
-  transform: scale(1.02);
-}
-
-.dragones-link .overlay-text {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.65);
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 1.5rem;
-  border-radius: 8px;
-  font-weight: bold;
-}
-.dragones-link img {
-  transition: transform 0.3s ease;
-}
-.dragones-link img:hover {
-  transform: scale(1.05);
-}
-<style>
-.back-button {
-  display: inline-block;
-  margin: 20px;
-  font-weight: bold;
-  color: #222;
-  font-size: 1.1em;
-  text-decoration: none;
-}
-.back-button:hover {
-  text-decoration: underline;
-}
-</style>
-}
-.banner {
-  width: 100%;
-  height: 300px;       /* altura fija del contenedor */
-  overflow: hidden;    /* recorta lo que sobresalga */
-}
-.banner-img {
-  width: 100%;
-  height: 100%;        /* llena el contenedor en altura */
-  object-fit: cover;   /* recorta centrado, preserva proporción */
-  object-position: center top; /* opcional: ajusta el foco del recorte */
-}
-.main-nav {
-  background-color: #FF7900; /* tu naranja */
-  text-align: center;
-  padding: 10px 0;
-}
-.main-nav a {
-  color: #fff;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
 }
