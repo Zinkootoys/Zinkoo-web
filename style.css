@@ -1,11 +1,11 @@
-/* Reset básico */
+/* = Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Fondo de la página */
+/* = Fondo */
 body {
   background-image: url('fondo.png');
   background-size: cover;
@@ -14,16 +14,15 @@ body {
   font-family: sans-serif;
 }
 
-/* Header: solo contendrá banner y luego la nav */
+/* = Header / Banner */
 header {
-  padding: 0;
   margin-bottom: 0;
+  padding: 0;
 }
 
-/* Contenedor del banner a pantalla completa */
 .banner {
   width: 100%;
-  height: 300px;       /* ajusta esta altura a tu gusto */
+  height: 300px;       /* altura fija: cambia aquí si quieres más o menos */
   overflow: hidden;
 }
 
@@ -31,11 +30,11 @@ header {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;   /* recorta centrado y mantiene proporción */
   object-position: center top;
 }
 
-/* Navegación principal */
+/* = Navegación */
 .main-nav {
   background-color: #FF7900;
   text-align: center;
@@ -55,7 +54,7 @@ header {
   font-weight: normal;
 }
 
-/* Main / Galería de productos */
+/* = Main / Galería */
 main {
   padding: 20px;
   text-align: center;
@@ -75,9 +74,8 @@ main {
   border-radius: 8px;
 }
 
-/* Sección “No et perdis els dracs!” */
+/* = Sección dracs */
 .dragones-link {
-  position: relative;
   margin: 40px auto;
   max-width: 800px;
   text-align: center;
@@ -87,7 +85,7 @@ main {
   width: 100%;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
   transition: transform 0.3s ease;
 }
 
@@ -95,34 +93,7 @@ main {
   transform: scale(1.05);
 }
 
-.dragones-link .overlay-text {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.65);
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 1.5rem;
-  border-radius: 8px;
-  font-weight: bold;
-}
-
-/* Botón “Volver” */
-.back-button {
-  display: inline-block;
-  margin: 20px;
-  font-weight: bold;
-  color: #222;
-  font-size: 1.1em;
-  text-decoration: none;
-}
-
-.back-button:hover {
-  text-decoration: underline;
-}
-
-/* Footer */
+/* = Footer */
 footer {
   background: transparent;
   padding: 20px 0;
@@ -139,12 +110,6 @@ footer {
 
 .auth-logo {
   height: 60px;
-  margin: 5px;
   width: auto;
-}
-
-.seller-logos img {
-  height: 100px;
-  margin: 0 20px;
-  vertical-align: middle;
+  margin: 5px;
 }
